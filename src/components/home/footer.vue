@@ -1,24 +1,24 @@
 <template>
   <footer id="footer">
-    <div class="item" :class="select==0?'select':''" @click="select=0">
+    <div class="item" :class="select=='/'?'select':''">
       <router-link to="/">
         <i class="el-icon-s-home"></i>
         <span>首页</span>
       </router-link>
     </div>
-    <div class="item" :class="select==1?'select':''" @click="select=1">
+    <div class="item" :class="select=='/type'?'select':''">
       <router-link to="/type">
         <i class="el-icon-tickets"></i>
         <span>分类</span>
       </router-link>
     </div>
-    <div class="item" :class="select==2?'select':''" @click="select=2">
+    <div class="item" :class="select=='/cart'?'select':''">
       <router-link to="/cart">
         <i class="el-icon-shopping-cart-2"></i>
         <span>购物车</span>
       </router-link>
     </div>
-    <div class="item" :class="select==3?'select':''" @click="select=3">
+    <div class="item" :class="select=='/my'?'select':''">
       <router-link to="/my">
         <i class="el-icon-user"></i>
         <span>我的</span>
@@ -30,8 +30,16 @@
 export default {
   data: function () {
     return {
-      select: 0
+      select: '/'
     }
+  },
+  watch: {
+    $route: function (to, from) {
+      this.select = to.path
+    }
+  },
+  beforeMount () {
+    this.select = this.$route.path
   }
 }
 </script>
@@ -45,6 +53,8 @@ export default {
   flex-direction: row;
   align-items: center;
   width: 100%;
+  z-index: 999;
+  background-color: #fff;
 }
 .item {
   flex: 1 1 auto;
