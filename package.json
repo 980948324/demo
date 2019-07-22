@@ -2,6 +2,7 @@
   "name": "xiaomi-mall",
   "version": "0.1.0",
   "private": true,
+  "productionSourceMap":true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

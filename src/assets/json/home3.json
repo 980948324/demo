@@ -1,0 +1,30 @@
+[
+    {
+        "name": "小米电视4A 32英寸",
+        "introduct": "人工智能系统，高清液晶屏",
+        "price": 769,
+        "old_price": 799,
+        "image_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3d20e4c39b6967319e89b1f779332b0e.jpg?thumb=1&w=344&h=280"
+    },
+    {
+        "name": "小米全面屏电视E55A",
+        "introduct": "全面屏设计，人工智能语音",
+        "price": 2099,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/f9811c5f-a585-e62d-b5d2-4fd721a9d9aa.webp"
+    },
+    {
+        "name": "小米电视4C 50英寸",
+        "introduct": "4K HDR，钢琴烤漆",
+        "price": 1699,
+        "old_price": "",
+        "image_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/896d989bcdae584906c36f4a4e5fa89b.jpg?thumb=1&w=344&h=280"
+    },
+    {
+        "name": "小米电视4X 55英寸",
+        "introduct": "4K HDR，人工智能语音",
+        "price": 1999,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/621208d5-0777-3071-3e06-e3e7254a8522.webp"
+    }
+]

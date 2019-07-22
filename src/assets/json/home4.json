@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Air 12.5\" 2019款",
+        "introduct": "像杂志一样随身携带",
+        "price": 3599,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/1ab77c9e-f4ee-edf9-9faf-b630f0b5a6fe.webp"
+    },
+    {
+        "name": "笔记本15.6\"  独显版",
+        "introduct": "全面均衡的国民轻薄本",
+        "price": 3999,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/28249bbe-0939-312a-4d7f-b3e83af68e07.webp"
+    },
+    {
+        "name": "Pro 15.6\" GTX版",
+        "introduct": "更强悍的专业笔记本",
+        "price": 6299,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/7f5bc597-499f-f97f-084a-905fa05c5b71.webp"
+    },
+    {
+        "name": "Pro 15.6\" 2019款",
+        "introduct": "强悍的专业笔记本",
+        "price": 5599,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/27acb835-9137-0051-7842-0fe65bd267bc.webp"
+    }
+]

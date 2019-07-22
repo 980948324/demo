@@ -1,0 +1,30 @@
+[
+    {
+        "name": "米家互联网空调（一级能效）",
+        "introduct": "1.5匹，全直流变频",
+        "price": 2399,
+        "old_price": 2699,
+        "image_url": "//i8.mifile.cn/v1/a1/c585ed38-bee4-2f3c-c413-a1af154a74b3.webp"
+    },
+    {
+        "name": "Redmi波轮洗衣机1A",
+        "introduct": "大容量一次洗净全家衣物",
+        "price": 799,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/75f5a1ad-e2c6-36a9-fd56-66d253cc0469.webp"
+    },
+    {
+        "name": "米家空调",
+        "introduct": "大1匹，静音，快速制冷热",
+        "price": 1699,
+        "old_price": 1799,
+        "image_url": "//i8.mifile.cn/v1/a1/75f5a1ad-e2c6-36a9-fd56-66d253cc0469.webp"
+    },
+    {
+        "name": "米家洗烘一体机",
+        "introduct": "洗得净、烘得干",
+        "price": 2299,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/27721d21-782a-32e8-772b-462652d9acde.webp"
+    }
+]

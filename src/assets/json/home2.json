@@ -1,0 +1,65 @@
+[
+    {
+        "name": "扫地机器人",
+        "introduct": "看得明白扫得彻底",
+        "price": 1999,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/81bf6395-c0af-7fd7-6caa-7dd301a02105.webp"
+    },
+    {
+        "name": "摄像机云台版",
+        "introduct": "高清画质，守护家的每一面",
+        "price": 199,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/c9c2cd57-0baa-edd3-a7fd-db53fb892a03.webp"
+    },
+    {
+        "name": "视频门铃套装",
+        "introduct": "手机看门外，出门更放心",
+        "price": 299,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/f105eafc-714b-da61-a322-f5cc53e251e0.webp"
+    },
+    {
+        "name": "变频落地扇",
+        "introduct": "模拟自然风算法",
+        "price": 299,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/92a0708f-dbae-0b7e-117e-63fe11dda7e9.webp"
+    },
+    {
+        "name": "真无线蓝牙耳机",
+        "introduct": "自动秒连，拿起就能用",
+        "price": 99.9,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/c637bd2a-1bbb-ce7b-0465-a6a89cd868d7.webp"
+    },
+    {
+        "name": "小爱音箱Play",
+        "introduct": "听音乐、语音遥控家电",
+        "price": 169,
+        "old_price": "",
+        "image_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/75cfba1ec641388eabc3ae5464ff1d27.jpg?thumb=1&w=221&h=221"
+    },
+    {
+        "name": "小爱AI音箱",
+        "introduct": "听音乐、语音遥控家电",
+        "price": 229,
+        "old_price": 299,
+        "image_url": "//i8.mifile.cn/v1/a1/6f2954f1-9b60-6d87-ffc1-ca203190fdb7.webp"
+    },
+    {
+        "name": "小米小爱触屏音箱智能门铃套装",
+        "introduct": "小米小爱触屏音箱智能门铃套装",
+        "price": 548,
+        "old_price": 568,
+        "image_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/1e42a35d6bf49a177809f7ba429e5ab1.jpg?thumb=1&w=221&h=221"
+    },
+    {
+        "name": "米家投影仪",
+        "introduct": "三秒自动对焦，好用又好看",
+        "price": 3999,
+        "old_price": "",
+        "image_url": "//i8.mifile.cn/v1/a1/51da3fb0-fbeb-fc42-8e18-f4d728fa534c.webp"
+    }
+]
