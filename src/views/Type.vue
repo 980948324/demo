@@ -596,6 +596,7 @@ export default {
 <style scoped>
 .about{
   padding-top: 51px;
+  font-size: 16px;
 }
 .list-navbar{
   position: fixed;

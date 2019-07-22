@@ -112,6 +112,7 @@ export default {}
 </script>
 <style scoped>
 .My {
+  font-size: 16px;
   background-color: #f5f5f5;
   padding-bottom: 30px;
 }
@@ -139,6 +140,7 @@ export default {}
   padding: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #fff;
+  font-size: 16px;
 }
 .myorder-bottom {
   padding: 0 40px;

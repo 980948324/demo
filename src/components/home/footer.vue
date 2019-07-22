@@ -55,6 +55,7 @@ export default {
   width: 100%;
   z-index: 999;
   background-color: #fff;
+  box-shadow: 0 3px 14px 2px rgba(0,0,0,.12);
 }
 .item {
   flex: 1 1 auto;
@@ -71,7 +72,7 @@ export default {
   font-size: 25px;
 }
 .item span {
-  font-size: 14px;
+  font-size: 12px;
 }
 .select a {
   color: #ff6700;

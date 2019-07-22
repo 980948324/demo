@@ -1,0 +1,30 @@
+[
+    {
+        "name": "小米MIX 2S",
+        "introduct": "四曲面陶瓷机身",
+        "price": 1999,
+        "old_price": 2999,
+        "image_url": "//i8.mifile.cn/v1/a1/b7aa0b1e-90bb-725d-fbd1-1bb26a051606.webp"
+    },
+    {
+        "name": "小米MIX 3",
+        "introduct": "DxO百分拍照手机",
+        "price": 2999,
+        "old_price": 3599,
+        "image_url": "//i8.mifile.cn/v1/a1/b7ad9e53-bc1e-dcc9-3175-3221cc043d64.webp"
+    },
+    {
+        "name": "Redmi K20 Pro",
+        "introduct": "骁龙855，弹出全面屏",
+        "price": 2499,
+        "old_price": "",
+        "image_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/dc1255fd3e70b6cdd6409627ca59d3f7.jpg?thumb=1&w=344&h=280"
+    },
+    {
+        "name": "小米8 屏幕指纹版",
+        "introduct": "6GB+128GB特惠，享6期分期",
+        "price": 1799,
+        "old_price": 2999,
+        "image_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/bb2ebb6fadaf67dfe765ce5866daac62.jpg?thumb=1&w=344&h=280"
+    }
+]

@@ -58,6 +58,7 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
+  font-size: 16px;
 }
 header div {
   flex: 1;
