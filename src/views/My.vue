@@ -44,7 +44,7 @@
       <li class="list-item">
         <router-link to="/viper">
           <div class="item-main">
-            <i class="el-icon-platform-eleme"></i>
+            <i class="el-icon-star-on" style="color:#FDC339"></i>
             <span>会员中心</span>
           </div>
           <i class="el-icon-arrow-right"></i>
@@ -53,7 +53,7 @@
       <li class="list-item">
         <router-link to="/coupon">
           <div class="item-main">
-            <i class="el-icon-platform-eleme"></i>
+            <i class="el-icon-s-ticket" style="color:#51BBE0"></i>
             <span>我的优惠</span>
           </div>
           <i class="el-icon-arrow-right"></i>
@@ -65,7 +65,7 @@
       <li class="list-item">
         <router-link to="/viper">
           <div class="item-main">
-            <i class="el-icon-platform-eleme"></i>
+            <i class="el-icon-phone" style="color:#F96C5E"></i>
             <span>服务中心</span>
           </div>
           <i class="el-icon-arrow-right"></i>
@@ -74,7 +74,7 @@
       <li class="list-item">
         <router-link to="/coupon">
           <div class="item-main">
-            <i class="el-icon-platform-eleme"></i>
+            <i class="el-icon-s-shop" style="color:#FF8B43"></i>
             <span>小米之家</span>
           </div>
           <i class="el-icon-arrow-right"></i>
@@ -86,7 +86,7 @@
       <li class="list-item">
         <router-link to="/viper">
           <div class="item-main">
-            <i class="el-icon-platform-eleme"></i>
+            <i class="el-icon-s-promotion" style="color:#FFB302"></i>
             <span>F码通道</span>
           </div>
           <i class="el-icon-arrow-right"></i>
@@ -98,7 +98,7 @@
       <li class="list-item">
         <router-link to="/viper">
           <div class="item-main">
-            <i class="el-icon-platform-eleme"></i>
+            <i class="el-icon-s-tools" style="color:#818C99"></i>
             <span>设置</span>
           </div>
           <i class="el-icon-arrow-right"></i>

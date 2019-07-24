@@ -1,0 +1,32 @@
+[
+    {
+        "image_url":"//i8.mifile.cn/b2c-mimall-media/245873bbc5bbbb9feac9eb6c5b30f00e!360x360.jpg",
+        "name":"移动电源2(5000mAh)",
+        "price":49
+    },
+    {
+        "image_url":"//cdn.cnbj1.fds.api.mi-img.com/mi-mall/477b561ea6b00e77e041ea73c881974e.jpg?thumb=1&w=360&h=360",
+        "name":"小米CC9 6GB+64GB",
+        "price":1799
+    },
+    {
+        "image_url":"//cdn.cnbj1.fds.api.mi-img.com/mi-mall/477b561ea6b00e77e041ea73c881974e.jpg?thumb=1&w=360&h=360",
+        "name":"小米CC9 6GB+128GB",
+        "price":1999
+    },
+    {
+        "image_url":"//i8.mifile.cn/b2c-mimall-media/d75a2f3b510b1f003f9eef17e757fc7f!360x360.jpg",
+        "name":"移动电源2(10000mAh)",
+        "price":79
+    },
+    {
+        "image_url":"//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/178f56b4973bac912d4d5a0190e9ac83.jpg?thumb=1&w=360&h=360",
+        "name":"Redmi Note 4GB+64GB",
+        "price":1199
+    },
+    {
+        "image_url":"//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3750c3016e976858b5549ba9f90a6b0a.jpg?thumb=1&w=360&h=360",
+        "name":"小米无线车充",
+        "price":169
+    }
+]

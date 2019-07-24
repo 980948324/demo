@@ -2,22 +2,35 @@
   <div class="about">
     <div class="list-navbar">
       <ul>
-        <li class="item" :class="index==activeId?'active':''" v-for="(item, index) in category" :key="index" v-text="item.category_name" @click="scrollTo(index)"></li>
+        <li
+          class="item"
+          :class="index==activeId?'active':''"
+          v-for="(item, index) in category"
+          :key="index"
+          v-text="item.category_name"
+          @click="scrollTo(index)"
+        ></li>
       </ul>
     </div>
     <div class="list-wrap">
-      <div class="list-item" v-for="(item, index) in category" :key="index" :class="'item'+index" ref="rightitem">
+      <div
+        class="list-item"
+        v-for="(item, index) in category"
+        :key="index"
+        :class="'item'+index"
+        ref="rightitem"
+      >
         <div class="item-title">
           <span>{{item.category_name}}</span>
         </div>
         <div class="item-group">
           <div class="category-item" v-for="(i, idx) in item.category_list" :key="idx">
-            <a href="#">
+            <router-link :to="i.detail" >
               <div class="image">
-                <img :src="i.img_url" alt="">
+                <img :src="i.img_url" alt />
               </div>
               <div>{{i.product_name}}</div>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -26,579 +39,817 @@
 </template>
 <script>
 export default {
-  name:'about',
-  data: function(){
+  name: "about",
+  data: function() {
     return {
-      title: '分类',
+      title: "分类",
       flag: true,
-      activeId:0,
-      itemHeight:[],
-      category:[
+      activeId: 0,
+      itemHeight: [],
+      category: [
         {
-          category_name:'新品',
-          category_list:[
+          category_name: "新品",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'众筹',
-          category_list:[
+          category_name: "众筹",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'手机',
-          category_list:[
+          category_name: "手机",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'电视',
-          category_list:[
+          category_name: "电视",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'电脑',
-          category_list:[
+          category_name: "电脑",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'智能',
-          category_list:[
+          category_name: "智能",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            }
-          ]
-        },{
-          category_name:'家用电器',
-          category_list:[
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            },
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            },
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            },
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            },
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            },
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            },
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            },
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
-            },
-            {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'厨房电器',
-          category_list:[
+          category_name: "家用电器",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'穿戴酷玩',
-          category_list:[
+          category_name: "厨房电器",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'家居家装',
-          category_list:[
+          category_name: "穿戴酷玩",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'电源插座',
-          category_list:[
+          category_name: "家居家装",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'出行车载',
-          category_list:[
+          category_name: "电源插座",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         },
         {
-          category_name:'耳机音箱',
-          category_list:[
+          category_name: "出行车载",
+          category_list: [
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             },
             {
-              product_name:'小米9',
-              img_url:'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png'
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            }
+          ]
+        },
+        {
+          category_name: "耳机音箱",
+          category_list: [
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            },
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            },
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            },
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            },
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            },
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            },
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            },
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
+            },
+            {
+              product_name: "小米9",
+              img_url:
+                "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/80db44cd6d4334a845b1e2e8335f060b.png",
+              detail: "/detail/10000134"
             }
           ]
         }
       ]
-    }
+    };
   },
   methods: {
-    scrollTo(index){
-      window.scrollTo(0,this.itemHeight[index])
+    scrollTo(index) {
+      window.scrollTo(0, this.itemHeight[index]);
     }
   },
   mounted() {
-    let that = this
-    let scrollHeight = 0
+    let that = this;
+    let scrollHeight = 0;
     this.$refs.rightitem.forEach(item => {
-      this.itemHeight.push(scrollHeight)
-      scrollHeight += item.offsetHeight
+      this.itemHeight.push(scrollHeight);
+      scrollHeight += item.offsetHeight;
     });
-    window.addEventListener('scroll',function(){
-      let scrollHeight = window.pageYOffset
-      for(let i=0;i<that.itemHeight.length;i++){
-        if(scrollHeight < that.itemHeight[i]){
-          that.activeId = i-1
-          break
+    window.addEventListener("scroll", function() {
+      let scrollHeight = window.pageYOffset;
+      for (let i = 0; i < that.itemHeight.length; i++) {
+        if (scrollHeight < that.itemHeight[i]) {
+          that.activeId = i - 1;
+          break;
         }
       }
-    })
+      if (scrollHeight >= that.itemHeight[that.itemHeight.length - 1]) {
+        that.activeId = that.itemHeight.length - 1;
+      }
+    });
   }
-}
+};
 </script>
 <style scoped>
-.about{
+.about {
   padding-top: 51px;
   font-size: 16px;
 }
-.list-navbar{
+.list-navbar {
   position: fixed;
   top: 51px;
   bottom: 54px;
@@ -607,7 +858,7 @@ export default {
   overflow: hidden;
   border: 1px solid #efefef;
 }
-.list-navbar ul{
+.list-navbar ul {
   position: absolute;
   width: 100%;
   top: 0;
@@ -615,56 +866,58 @@ export default {
   overflow-y: auto;
   list-style: none;
 }
-.list-navbar .item{
+.list-navbar .item {
   height: 48px;
   line-height: 48px;
   text-align: center;
   font-size: 18px;
-  transform: scale(.76);
+  transform: scale(0.76);
 }
-.list-navbar .active{
+.list-navbar .active {
   color: #fb7d34;
   transform: scale(1);
 }
 ::-webkit-scrollbar {
   display: none;
 }
-.list-wrap{
+.list-wrap {
   padding-left: 100px;
-  padding-right:20px;
+  padding-right: 20px;
 }
-.list-item{
+.list-item {
   width: 100%;
-  height: 350px;
 }
-.item-title{
+.list-item:last-child {
+  min-height: calc(100vh - 0.8rem);
+}
+.item-title {
   padding: 20px 0;
   text-align: center;
 }
-.item-group{
+.item-group {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   text-align: center;
 }
-.category-item{
+.category-item {
   display: flex;
   width: 33.3%;
   text-align: center;
   margin: 10px 0;
 }
-.category-item a{
+.category-item a {
   text-decoration: none;
   margin: 0 auto;
-  color: rgba(0,0,0,.54);
+  color: rgba(0, 0, 0, 0.54);
   font-size: 14px;
 }
-.category-item .image{
+.category-item .image {
   height: 52px;
   width: 52px;
   margin-bottom: 10px;
 }
-.category-item .image img{
+.category-item .image img {
   width: auto;
   height: 100%;
 }

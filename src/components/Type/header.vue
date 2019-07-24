@@ -48,7 +48,7 @@ export default {
 <style scoped>
 header {
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   top: 0;
   left: 0;
   right: 0;
@@ -85,6 +85,6 @@ header div:nth-of-type(3) i {
 }
 .head-enter-active,
 .head-leave-active {
-  transition: all 0.2s ease;
+  transition: all .5s ease;
 }
 </style>

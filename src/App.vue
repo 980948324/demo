@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header></Header>
-    <router-view></router-view>
+    <div class="router">
+      <router-view></router-view>
+    </div>
     <Footer></Footer>
   </div>
 </template>
@@ -9,19 +11,22 @@
 <script>
 import Header from "./components/Type/header.vue";
 import Footer from "./components/home/footer.vue";
-import Rem from "./assets/js/rem.js"
+import Rem from "./assets/js/rem.js";
 new Rem();
 export default {
   name: "app",
-  data: function () {
-    return {}
+  data: function() {
+    return {};
   },
   components: {
     Header,
     Footer
   },
   methods: {}
-}
+};
 </script>
 <style scoped>
+.router {
+  padding-bottom: 51px;
+}
 </style>
