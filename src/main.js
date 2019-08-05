@@ -5,6 +5,9 @@ import ElementUI from 'element-ui'
 import VueLazyLoad from 'vue-lazyload'
 import 'element-ui/lib/theme-chalk/index.css'
 import './plugins/element.js'
+import axios from 'axios'
+
+Vue.prototype.axios = axios
 
 Vue.use(VueLazyLoad)
 

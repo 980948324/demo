@@ -37,6 +37,13 @@ export default {
             console.log('end')
             let width = this.screenWidth / 2
             let totallength = (this.swipers.length-1) * this.screenWidth
+
+            console.log(this.scrollLength==0&&this.moveLength<0)
+            console.log((this.scrollLength==-totallength)&&this.moveLength>0)
+            console.log(this.moveLength>width || -this.moveLength > width)
+
+
+            
             if(((this.scrollLength==0&&this.moveLength<0)||(this.scrollLength==-totallength&&this.moveLength>0))&&(this.moveLength>width || -this.moveLength > width)){
                 let l 
                 if(this.moveLength>0){
