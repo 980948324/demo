@@ -7,11 +7,12 @@ module.exports = {
     productionSourceMap: false,
     devServer: {
         proxy: {
-            '/api': {
+            '/': {
+                ws:false,
                 target: 'http://59.110.233.102:80',
                 changeOrigin: true,
                 pathRewrite: {
-                    '^/api': ''
+                    '^/': ''
                 }
             }
         }

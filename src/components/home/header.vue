@@ -62,6 +62,7 @@ export default {
       if(this.showPullDown){
         this.toggleBar()
       }
+      window.scrollTo(0,1)
       window.scrollTo(0, 0);
     },
     toggleBar() {

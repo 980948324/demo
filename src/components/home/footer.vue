@@ -14,7 +14,8 @@
         </router-link>
       </div>
       <div class="item" :class="select=='/cart'?'select':''">
-        <router-link to="/cart">
+        <router-link to="/cart" style="position:relative">
+          <span class="icon-num" v-show="total!=0" v-text="total"></span>
           <i class="el-icon-shopping-cart-2"></i>
           <span>购物车</span>
         </router-link>
@@ -36,6 +37,17 @@ export default {
       showFoot: true
     };
   },
+  computed: {
+    total(){
+      var total = 0;
+      var cart = window.localStorage.getItem('cart')||{};
+      cart = JSON.parse(cart);
+      for(let i in cart){
+        total += cart[i].length
+      }
+      return total
+    }
+  },
   watch: {
     $route: function(to, from) {
       var selected = ["/", "/type", "/cart", "/my"];
@@ -47,13 +59,13 @@ export default {
       }
     }
   },
-  beforeMount() {
+  mounted() {
     var selected = ["/", "/type", "/cart", "/my"];
       if (selected.indexOf(this.$route.path) === -1) {
         this.showFoot = false;
       } else {
         this.showFoot = true;
-        this.select = to.path;
+        this.select = this.$route.path;
       }
   }
 };
@@ -104,5 +116,17 @@ export default {
 .foot-enter-active,
 .foot-leave-active {
   transition: all .5s ease;
+}
+.icon-num{
+  width:18px;
+  height: 18px;
+  background-color: #ff6700;
+  color:#fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 18px;
+  position: absolute;
+  margin-left: 20px;
+  top:-5px;
 }
 </style>

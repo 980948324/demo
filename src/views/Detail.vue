@@ -37,13 +37,15 @@
           <i class="el-icon-house"></i>
           首页
         </a>
-        <a href>
+        <a href style="position:relative">
+          <span class="icon-num">1</span>
           <i class="el-icon-shopping-cart-1"></i>
           购物车
         </a>
       </div>
-      <div>
+      <div style="position:relative">
         <a class="btn" @click="addToCart">加入购物车</a>
+        <span class="bool"></span>
       </div>
     </div>
   </div>
@@ -53,14 +55,15 @@ import Swiper from "../components/home/swiper";
 export default {
   data() {
     return {
-      goodsDetail: {}
+      goodsDetail: {},
+      id: ""
     };
   },
   methods: {
     getData() {
       var id = this.$router.currentRoute.params.id;
       this.axios
-        .get("/api/mi/connect.php?proid=" + id)
+        .get("/mi/connect.php?proid=" + id)
         .then(res => {
           if (res.status === 200) {
             res.data[0].prod_image = res.data[0].prod_image.split("|");
@@ -77,7 +80,27 @@ export default {
           console.log(err);
         });
     },
-    addToCart(){
+    addToCart() {
+      var cart = window.localStorage.getItem("cart") || {};
+      cart = JSON.parse(cart);
+      if (cart[this.goodsDetail.prod_id]) {
+        cart[this.goodsDetail.prod_id].length++;
+        cart = JSON.stringify(cart);
+        window.localStorage.setItem("cart", cart);
+      } else {
+        cart[this.goodsDetail.prod_id] = {
+          id: this.goodsDetail.prod_id,
+          name: this.goodsDetail.prod_name,
+          img: this.goodsDetail.prod_image[0].image_url,
+          price: this.goodsDetail.prod_price,
+          length: 1
+        };
+        cart = JSON.stringify(cart);
+        window.localStorage.setItem("cart", cart);
+      }
+    },
+    getTotal(){
+      var cart = window.localStorage.getItem('cart');
     }
   },
   mounted() {
@@ -125,6 +148,7 @@ header > div > a {
 .infos .intro {
   font-size: 0.38rem;
   margin: 0 0.4rem;
+  color: rgb(117, 117, 117);
 }
 .infos .price {
   display: flex;
@@ -139,6 +163,7 @@ header > div > a {
 .infos .price span:last-child {
   text-decoration: line-through;
   font-size: 0.4rem;
+  color: rgb(117, 117, 117);
 }
 .intro_img {
   width: 100%;
@@ -180,6 +205,31 @@ header > div > a {
   padding: 0.1rem 0.5rem;
   border-radius: 15px;
   margin-right: 0.2rem;
-  font-size: .5rem;
+  font-size: 0.5rem;
+}
+.cart .bool {
+  display: none;
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: #f2f2f2;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.2rem;
+  margin-top: -0.2rem;
+  border-radius: 50%;
+}
+.icon-num{
+  width:.3rem;
+  height: .3rem;
+  background-color: #ff6700;
+  color:#fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: .3rem;
+  position: absolute;
+  margin-left: .8rem;
+  top:-5px;
+  font-size: .01rem
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="product">
     <a href v-for="(item, index) in product" :key="index" class="product-item">
       <div class="img">
-        <img v-lazy="item.image_url" alt />
+        <img v-lazy="item.image_url" :key="item.image_url" />
       </div>
       <div class="introduct">
         <div class="name">{{item.name}}</div>

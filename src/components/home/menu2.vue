@@ -2,7 +2,7 @@
   <div class="nav">
     <div v-for="(item, index) in nav" :key="index" class="navitem">
       <a href>
-        <img v-lazy="item.image_url" alt />
+        <img v-lazy="item.image_url" :key="item.image_url" />
       </a>
     </div>
   </div>

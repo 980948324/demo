@@ -9,7 +9,10 @@ import axios from 'axios'
 
 Vue.prototype.axios = axios
 
-Vue.use(VueLazyLoad)
+Vue.use(VueLazyLoad,{
+  preLoad:1.5
+})
+
 
 Vue.use(ElementUI)
 
